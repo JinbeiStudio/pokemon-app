@@ -1,7 +1,7 @@
 
 <ul>
-    <li *ngFor="let a of pokeList; let index = index">
-        <app-carte-pokemon [data]="a">
+    <li *ngFor="let pokemon of pokeList">
+        <app-carte-pokemon [data]="pokemon">
         </app-carte-pokemon>
     </li>
 </ul>
