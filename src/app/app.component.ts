@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokemon-app';
+  money = {
+    title: "PK",
+    quantite: 100,
+  };
+
   pokeList = [
       {
         name: "Fearow",
