@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CartePokemonComponent } from './components/carte-pokemon/carte-pokemon.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CartePokemonComponent
   ],
   imports: [
     BrowserModule,
