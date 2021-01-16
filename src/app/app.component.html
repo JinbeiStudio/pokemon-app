@@ -1,1 +1,7 @@
-<app-carte-pokemon></app-carte-pokemon>
+
+<ul>
+    <li *ngFor="let a of pokeList; let index = index">
+        <app-carte-pokemon [data]="a">
+        </app-carte-pokemon>
+    </li>
+</ul>
