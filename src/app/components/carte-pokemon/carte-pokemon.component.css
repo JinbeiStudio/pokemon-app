@@ -88,7 +88,8 @@ video {
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 h3,
@@ -112,7 +113,7 @@ h4 {
   border: solid 1px;
   border-radius: 5px;
   box-shadow: 8px 8px 4px #aaa;
-  margin: 100px 40px;
+  margin: 50px 40px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -137,7 +138,7 @@ h4 {
 }
 
 img {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .removeCard {
