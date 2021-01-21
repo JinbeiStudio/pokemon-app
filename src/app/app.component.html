@@ -1,6 +1,12 @@
-<app-header [money]="money"></app-header>
-<ul class="listeCartes">
-  <li *ngFor="let pokemon of pokeList">
-    <app-carte-pokemon [data]="pokemon"> </app-carte-pokemon>
+<ul class="nav navbar-nav">
+  <li>
+    <a routerLink="about">About</a>
+  </li>
+  <li>
+    <a routerLink="home">home</a>
+  </li>
+   <li>
+    <a routerLink="services">Services</a>
   </li>
 </ul>
+<router-outlet> </router-outlet>
