@@ -1,0 +1,8 @@
+.listeCartes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 50px;
+    list-style: none;
+    justify-content: center;
+  }
