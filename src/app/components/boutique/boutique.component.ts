@@ -7,10 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoutiqueComponent implements OnInit {
   title = 'boutique';
-  money = {
-    title: 'PK',
-    quantite: 100,
-  };
   pokeList = [11,12,13,14,15,16,17,18,19,110];
   constructor() { }
 
