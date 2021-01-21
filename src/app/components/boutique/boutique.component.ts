@@ -11,6 +11,7 @@ export class BoutiqueComponent implements OnInit {
     title: 'PK',
     quantite: 100,
   };
+  pokeList = [11,12,13,14,15,16,17,18,19,110];
   constructor() { }
 
   ngOnInit(): void {

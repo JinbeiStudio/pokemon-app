@@ -11,6 +11,7 @@ export class DeckComponent implements OnInit {
     title: 'PK',
     quantite: 100,
   };
+  pokeList = [1,2,3,4,5,6,7,8,9,10];
   constructor() { }
 
   ngOnInit(): void {
