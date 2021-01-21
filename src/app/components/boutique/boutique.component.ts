@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-boutique',
@@ -7,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoutiqueComponent implements OnInit {
   title = 'boutique';
-  pokeList = [11,12,13,14,15,16,17,18,19,110];
-  constructor() { }
+  user;
 
-  ngOnInit(): void {
+  constructor(private UserDataService: UserDataService) {
+    this.user ={
+      name:'attente',
+      money:0,
+      cards:[],
+    };
+   }
+
+
+   public refresh()
+   {
+    this.user = this.UserDataService.getUserDatas();
+   }
+   ngOnInit(): void {
+    this.UserDataService.subscribe(this);
+    this.refresh();
   }
 
 }

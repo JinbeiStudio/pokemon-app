@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-deck',
@@ -7,11 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeckComponent implements OnInit {
   title = 'deck';
-
-  pokeList = [1,2,3,4,5,6,7,8,9,10];
-  constructor() { }
-
-  ngOnInit(): void {
+  user;
+  
+  constructor(private UserDataService: UserDataService) {
+    this.user ={
+      name:'attente',
+      money:0,
+      cards:[],
+    }
+   }
+   public refresh()
+   {
+    this.user = this.UserDataService.getUserDatas();
+   }
+   ngOnInit(): void {
+    this.UserDataService.subscribe(this);
+    this.refresh();
   }
 
 }

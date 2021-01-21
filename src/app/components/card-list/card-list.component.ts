@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent implements OnInit {
-
+  @Input() delete:boolean;
   @Input() pokeList:[];
     constructor() {}
 
