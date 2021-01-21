@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserDataService {
   money = 100;
   name = "dresseur";
-  cards = [11,12,13,14,15,16,17,18,19,110];
+  cards = [];
   subs = [];
   constructor() { }
   public getUserDatas()
@@ -21,7 +21,20 @@ export class UserDataService {
   public buyCardPack()
   {
     this.money -= 10;
-    alert('Vous avez acheter un paquet!');
+    this.notify();
+  }
+
+  public sellCard()
+  {
+    this.money += 0.5;
+    alert('Vous avez vendu la carte');
+    this.notify();
+  }
+
+  public addCard(id)
+  {
+    this.cards.push(id)
+    alert('Vous avez pris la carte');
     this.notify();
   }
 

@@ -23,6 +23,7 @@ export class BoutiqueComponent implements OnInit {
    {
     this.user = this.UserDataService.getUserDatas();
    }
+   
    ngOnInit(): void {
     this.UserDataService.subscribe(this);
     this.refresh();
