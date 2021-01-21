@@ -1,4 +1,5 @@
-<div class="cartePokemon">
+<ng-template [ngIf]="visible && min_attaque <=  data.stats.attack">
+<div class="cartePokemon" >
   <ng-template [ngIf]="cross">
     <button class="removeCard" (click)="SellCard()">X</button>
   </ng-template>
@@ -23,7 +24,8 @@
     <p>{{ data.stats.speed }}</p>
   </div>
   <ng-template [ngIf]="cross">
-    <button  (click)="sellCard()">Sell</button>
     <button  (click)="addCard()">Pick</button>
+    <button  (click)="sellCard()">Sell</button>
   </ng-template>
 </div>
+</ng-template>
