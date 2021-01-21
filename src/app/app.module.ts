@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { CartePokemonComponent } from './components/carte-pokemon/carte-pokemon.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardListComponent } from './card-list/card-list.component';
+import { DeckComponent } from './deck/deck.component';
+import { BoutiqueComponent } from './boutique/boutique.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CartePokemonComponent,
     HeaderComponent,
-    CardListComponent
+    CardListComponent,
+    DeckComponent,
+    BoutiqueComponent
   ],
   imports: [
     BrowserModule,
