@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
+import { UserDataService } from '../../services/user-data.service';
 
 @Component({
   selector: 'app-carte-pokemon',
@@ -23,7 +24,7 @@ export class CartePokemonComponent implements OnInit {
 
   @Input() idPokemon: number;
 
-  constructor(private PokemonService: PokemonService) {
+  constructor(private UserDataService: UserDataService,private PokemonService: PokemonService) {
     this.data = {
       name: 'nom',
       poke_id: 1,
@@ -44,5 +45,17 @@ export class CartePokemonComponent implements OnInit {
       console.log(pokemon);
       this.data = pokemon;
     });
+  }
+
+  addCard()
+  {
+
+    this.cross && this.UserDataService.addCard(this.idPokemon);
+    
+  }
+
+  sellCard()
+  {
+    this.cross && this.UserDataService.sellCard();
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../../services/user-data.service';
+import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-card-pack',
@@ -7,13 +8,14 @@ import { UserDataService } from '../../services/user-data.service';
   styleUrls: ['./card-pack.component.css']
 })
 export class CardPackComponent implements OnInit {
-
-  constructor(private UserDataService: UserDataService) { }
+  cards_looted = [];
+  constructor(private UserDataService: UserDataService, private PokemonService: PokemonService) { }
 
   ngOnInit(): void {
   }
 
   buyPack(): void {
     this.UserDataService.buyCardPack();
+    this.cards_looted = this.PokemonService.randomNumbers();
   }
 }

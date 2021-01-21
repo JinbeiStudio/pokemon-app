@@ -1,2 +1,5 @@
 <h1>Deck</h1>
+<ng-template [ngIf]="user.cards.length == 0">
+    <p> Vous n'avez pas encore de pokemons, allez dans la boutique pour en obtenir.</p>
+</ng-template>
 <app-card-list [pokeList]="user.cards" [delete] ="false"> </app-card-list>
