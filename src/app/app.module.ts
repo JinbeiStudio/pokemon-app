@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { DeckComponent } from './components/deck/deck.component';
 import { BoutiqueComponent } from './components/boutique/boutique.component';
+import { PokemonService } from './services/pokemon.service';
 
 @NgModule({
   declarations: [
@@ -17,15 +18,11 @@ import { BoutiqueComponent } from './components/boutique/boutique.component';
     HeaderComponent,
     CardListComponent,
     DeckComponent,
-    BoutiqueComponent
+    BoutiqueComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
 
-  providers: [],
+  providers: [PokemonService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
