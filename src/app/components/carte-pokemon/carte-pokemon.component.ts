@@ -20,10 +20,12 @@ export class CartePokemonComponent implements OnInit {
     };
   };
 
+  @Input() idPokemon: number;
+
   constructor(private PokemonService: PokemonService) {}
 
   ngOnInit() {
-    this.PokemonService.getPokemon(1).subscribe((data) => {
+    this.PokemonService.getPokemon(this.idPokemon).subscribe((data) => {
       console.log(data);
     });
   }
