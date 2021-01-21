@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-carte-pokemon',
@@ -7,17 +8,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartePokemonComponent implements OnInit {
   @Input() data: {
-      name: String;
-      element: String;
-      img: String;
-      stats: {
-        pv: number;
-        defense: number;
-        attaque: number;
-        vitesse: number;
-      };
+    name: String;
+    poke_id: Number;
+    image: String;
+    type: String;
+    stats: {
+      attack: number;
+      hp: number;
+      speed: number;
+      defense: number;
     };
-    constructor() {}
+  };
 
-  ngOnInit(): void {}
+  constructor(private PokemonService: PokemonService) {}
+
+  ngOnInit() {
+    this.PokemonService.getPokemon(1).subscribe((data) => {
+      console.log(data);
+    });
+  }
 }

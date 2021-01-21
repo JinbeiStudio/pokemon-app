@@ -1,12 +1,12 @@
 <div class="cartePokemon">
   <button class="removeCard">X</button>
   <h3>{{ data.name }}</h3>
-  <h4>{{ data.element }}</h4>
+  <h4>{{ data.type }}</h4>
 
-  <img [src]="data.img" alt="" />
+  <img [src]="data.image" alt="" />
   <div>
     <p>PV</p>
-    <p>{{ data.stats.pv }}</p>
+    <p>{{ data.stats.hp }}</p>
   </div>
   <div>
     <p>Défense</p>
@@ -14,10 +14,10 @@
   </div>
   <div>
     <p>Attaque</p>
-    <p>{{ data.stats.attaque }}</p>
+    <p>{{ data.stats.attack }}</p>
   </div>
   <div>
     <p>Vitesse</p>
-    <p>{{ data.stats.vitesse }}</p>
+    <p>{{ data.stats.speed }}</p>
   </div>
 </div>
