@@ -1,14 +1,19 @@
 <h1>Deck</h1>
 
-<div>
-    <label for="attaque">
-        Min Attaque
-    </label>
-    <input type="number" [(ngModel)]="min_attaque">
-  </div>
+<div class="attaqueInput">
+  <label for="attaque"> Attaque minimum : </label>
+  <input type="number" [(ngModel)]="min_attaque" />
+</div>
 
 <ng-template [ngIf]="user.cards.length == 0">
-    <p> Vous n'avez pas encore de pokemons, allez dans la boutique pour en obtenir.</p>
+  <p class="noCard">
+    Vous n'avez pas encore de pokemons, allez dans la boutique pour en obtenir.
+  </p>
 </ng-template>
 
-<app-card-list [pokeList]="user.cards" [delete] ="false" [min_attaque]="min_attaque"> </app-card-list>
+<app-card-list
+  [pokeList]="user.cards"
+  [delete]="false"
+  [min_attaque]="min_attaque"
+>
+</app-card-list>

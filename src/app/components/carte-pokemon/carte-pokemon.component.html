@@ -1,31 +1,31 @@
-<ng-template [ngIf]="visible && min_attaque <=  data.stats.attack">
-<div class="cartePokemon" >
-  <ng-template [ngIf]="cross">
-    <button class="removeCard" (click)="SellCard()">X</button>
-  </ng-template>
-  <h3>{{ data.name }}</h3>
-  <h4>{{ data.type }}</h4>
+<ng-template [ngIf]="visible && min_attaque <= data.stats.attack">
+  <div (click)="cross === true ? addCard() : false" class="cartePokemon">
+    <ng-template [ngIf]="cross">
+      <button class="removeCard" (click)="sellCard()">X</button>
+    </ng-template>
+    <h3>{{ data.name }}</h3>
+    <h4>{{ data.type }}</h4>
 
-  <img [src]="data.image" alt="" />
-  <div>
-    <p>PV</p>
-    <p>{{ data.stats.hp }}</p>
+    <img [src]="data.image" alt="" />
+    <div>
+      <p>PV</p>
+      <p>{{ data.stats.hp }}</p>
+    </div>
+    <div>
+      <p>Défense</p>
+      <p>{{ data.stats.defense }}</p>
+    </div>
+    <div>
+      <p>Attaque</p>
+      <p>{{ data.stats.attack }}</p>
+    </div>
+    <div>
+      <p>Vitesse</p>
+      <p>{{ data.stats.speed }}</p>
+    </div>
+    <!-- <ng-template [ngIf]="cross">
+      <button (click)="addCard()">Pick</button>
+      <button (click)="sellCard()">Sell</button>
+    </ng-template> -->
   </div>
-  <div>
-    <p>Défense</p>
-    <p>{{ data.stats.defense }}</p>
-  </div>
-  <div>
-    <p>Attaque</p>
-    <p>{{ data.stats.attack }}</p>
-  </div>
-  <div>
-    <p>Vitesse</p>
-    <p>{{ data.stats.speed }}</p>
-  </div>
-  <ng-template [ngIf]="cross">
-    <button  (click)="addCard()">Pick</button>
-    <button  (click)="sellCard()">Sell</button>
-  </ng-template>
-</div>
 </ng-template>

@@ -1,10 +1,11 @@
-<div>
-    <button (click)="buyPack()">
-        Acheter un paquet pour 10PK
-        <img src="https://lostin70s.com/lpwebfront/static/pokeapp/assets/booster.png">
-    </button>
-    
+<div class="packComponent">
+  <div (click)="buyPack()" class="cardPack">
+    <img
+      src="https://lostin70s.com/lpwebfront/static/pokeapp/assets/booster.png"
+    />
+    <button>Acheter un paquet pour 10PK</button>
+  </div>
+  <ng-template [ngIf]="cards_looted.length > 0">
+    <app-card-list [pokeList]="cards_looted" [delete]="true"> </app-card-list>
+  </ng-template>
 </div>
-<ng-template [ngIf]="cards_looted.length > 0">
-    <app-card-list [pokeList]="cards_looted" [delete] ="true"> </app-card-list>
-</ng-template>
