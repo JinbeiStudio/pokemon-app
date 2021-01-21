@@ -8,6 +8,7 @@ import { UserDataService } from '../../services/user-data.service';
 })
 export class DeckComponent implements OnInit {
   title = 'deck';
+  min_attaque =0;
   user;
   
   constructor(private UserDataService: UserDataService) {
@@ -24,6 +25,11 @@ export class DeckComponent implements OnInit {
    ngOnInit(): void {
     this.UserDataService.subscribe(this);
     this.refresh();
+  }
+
+  public updateMinAttaque()
+  {
+    //this.min_attaque = document.getElementById("min_attaque").value;
   }
 
 }

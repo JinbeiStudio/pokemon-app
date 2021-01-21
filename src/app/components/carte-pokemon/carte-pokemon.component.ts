@@ -8,6 +8,8 @@ import { UserDataService } from '../../services/user-data.service';
   styleUrls: ['./carte-pokemon.component.css'],
 })
 export class CartePokemonComponent implements OnInit {
+  visible = true;
+  @Input() min_attaque = 0;
   @Input() cross:boolean;
   @Input() data: {
     name: string;
@@ -51,11 +53,13 @@ export class CartePokemonComponent implements OnInit {
   {
 
     this.cross && this.UserDataService.addCard(this.idPokemon);
+    this.visible = false;
     
   }
 
   sellCard()
   {
     this.cross && this.UserDataService.sellCard();
+    this.visible = false;
   }
 }

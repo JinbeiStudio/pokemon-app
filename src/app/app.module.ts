@@ -12,6 +12,7 @@ import { BoutiqueComponent } from './components/boutique/boutique.component';
 import { PokemonService } from './services/pokemon.service';
 import { CardPackComponent } from './components/card-pack/card-pack.component';
 import { UserDataService } from './services/user-data.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { UserDataService } from './services/user-data.service';
     BoutiqueComponent,
     CardPackComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 
   providers: [PokemonService,UserDataService],
   bootstrap: [AppComponent],

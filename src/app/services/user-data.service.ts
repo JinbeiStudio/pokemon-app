@@ -27,14 +27,12 @@ export class UserDataService {
   public sellCard()
   {
     this.money += 0.5;
-    alert('Vous avez vendu la carte');
     this.notify();
   }
 
   public addCard(id)
   {
     this.cards.push(id)
-    alert('Vous avez pris la carte');
     this.notify();
   }
 
