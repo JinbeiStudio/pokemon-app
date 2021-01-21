@@ -7,6 +7,7 @@ import { PokemonService } from '../../services/pokemon.service';
   styleUrls: ['./carte-pokemon.component.css'],
 })
 export class CartePokemonComponent implements OnInit {
+  @Input() cross:boolean;
   @Input() data: {
     name: string;
     poke_id: number;
@@ -22,12 +23,26 @@ export class CartePokemonComponent implements OnInit {
 
   @Input() idPokemon: number;
 
-  constructor(private PokemonService: PokemonService) {}
+  constructor(private PokemonService: PokemonService) {
+    this.data = {
+      name: 'nom',
+      poke_id: 1,
+      image: 'string',
+      type: 'string',
+      stats: {
+        attack: 1,
+        hp: 1,
+        speed: 1,
+        defense: 1,
+      }
+    };
+    
+  }
 
   ngOnInit() {
     this.PokemonService.getPokemon(this.idPokemon).subscribe((pokemon: any) => {
       console.log(pokemon);
-      this.data.name = pokemon.name;
+      this.data = pokemon;
     });
   }
 }
