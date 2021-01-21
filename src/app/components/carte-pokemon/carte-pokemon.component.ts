@@ -8,10 +8,10 @@ import { PokemonService } from '../../services/pokemon.service';
 })
 export class CartePokemonComponent implements OnInit {
   @Input() data: {
-    name: String;
-    poke_id: Number;
-    image: String;
-    type: String;
+    name: string;
+    poke_id: number;
+    image: string;
+    type: string;
     stats: {
       attack: number;
       hp: number;
@@ -25,8 +25,9 @@ export class CartePokemonComponent implements OnInit {
   constructor(private PokemonService: PokemonService) {}
 
   ngOnInit() {
-    this.PokemonService.getPokemon(this.idPokemon).subscribe((data) => {
-      console.log(data);
+    this.PokemonService.getPokemon(this.idPokemon).subscribe((pokemon: any) => {
+      console.log(pokemon);
+      this.data.name = pokemon.name;
     });
   }
 }
